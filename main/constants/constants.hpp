@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include "esp_log.h"
+#include "nvs_flash.h"
+#include "BleGamepad.h"
+
+#include "driver/adc.h"
+#define NUM_BUTTONS 16
+#define NUM_AXES 4
+
+#define AXIS_MIN 0x8001
+#define AXIS_MAX 0x7FFF
+
+typedef enum {
+    PS3_BUTTON_X = GPIO_NUM_18,
+    PS3_BUTTON_CIRCLE = GPIO_NUM_19,
+    PS3_BUTTON_SQUARE = GPIO_NUM_21,
+    PS3_BUTTON_TRIANGLE = GPIO_NUM_47,
+    PS3_BUTTON_L1 = GPIO_NUM_5,
+    PS3_BUTTON_R1 = GPIO_NUM_16,
+    PS3_BUTTON_L2 = GPIO_NUM_26,
+    PS3_BUTTON_R2 = GPIO_NUM_27,
+    PS3_BUTTON_SELECT = GPIO_NUM_32,
+    PS3_BUTTON_START = GPIO_NUM_33,
+    PS3_BUTTON_L3 = GPIO_NUM_34,
+    PS3_BUTTON_R3 = GPIO_NUM_35,
+    PS3_BUTTON_PS = GPIO_NUM_36,
+    PS3_BUTTON_TPAD = GPIO_NUM_39,
+    PS3_BUTTON_SHARE = GPIO_NUM_13,
+    PS3_BUTTON_OPTIONS = GPIO_NUM_14
+} ps3_button_t;
+
+typedef enum {
+    AXIS_LX = ADC1_CHANNEL_0,
+    AXIS_LY = ADC1_CHANNEL_3,
+    AXIS_RX = ADC1_CHANNEL_6,
+    AXIS_RY = ADC1_CHANNEL_7
+} ps3_axis_t;
+
+const ps3_button_t button_pins[] = {
+    PS3_BUTTON_X, PS3_BUTTON_CIRCLE, PS3_BUTTON_SQUARE, PS3_BUTTON_TRIANGLE, PS3_BUTTON_L1, PS3_BUTTON_R1, PS3_BUTTON_L2, PS3_BUTTON_R2,
+    PS3_BUTTON_SELECT, PS3_BUTTON_START, PS3_BUTTON_L3, PS3_BUTTON_R3, PS3_BUTTON_PS, PS3_BUTTON_TPAD, PS3_BUTTON_SHARE, PS3_BUTTON_OPTIONS
+};
+
+const ps3_axis_t axis_pins[] = {
+    AXIS_LX, AXIS_LY, AXIS_RX, AXIS_RY
+};
+
+typedef enum {
+    HAT_UP_PIN = GPIO_NUM_15,
+    HAT_DOWN_PIN = GPIO_NUM_2,
+    HAT_LEFT_PIN = GPIO_NUM_12,
+    HAT_RIGHT_PIN = GPIO_NUM_27
+} ps3_hat_t;
+
+const ps3_hat_t hat_pins[] = {
+    HAT_UP_PIN, HAT_DOWN_PIN, HAT_LEFT_PIN, HAT_RIGHT_PIN
+};

@@ -1,0 +1,3 @@
+CONFIG_FREERTOS_HZ=100 => 1000
+Serial flasher config => 16MB
+componnentconfig-freertos-kernel configTimerTaskStackDepth-> 4096

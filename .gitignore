@@ -1,0 +1,34 @@
+# Ignorar la carpeta build
+/build/
+
+/components/
+
+/managed_components/
+
+# Ignorar la carpeta .devcontainer
+/.devcontainer/
+
+# Ignorar la carpeta .vscode
+/.vscode/
+
+# Ignorar archivos temporales de compilación y depuración
+*.log
+*.bin
+*.elf
+*.map
+
+# Ignorar archivos de configuración de IDF
+sdkconfig
+sdkconfig.old
+
+# Ignorar archivos de sistema y temporales
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+
+# Ignorar archivos relacionados con git
+*.lock
+*.pem

@@ -1,0 +1,8 @@
+# Name   ,Type ,SubType  ,Offset   ,Size     ,Flags
+app0     ,app  ,ota_0    ,0x10000  ,0x400000 ,
+app1     ,app  ,ota_1    ,0x410000  ,0x400000 ,
+nvs      ,data ,nvs      ,0x810000  ,0x5000   ,
+phy_init ,data ,phy      ,0x860000  ,0x1000   ,
+otadata  ,data ,ota      ,0x870000  ,0x2000   ,
+nvs_key  ,data ,nvs_keys ,0x890000  ,0x6000    ,
+spiffs   ,data ,spiffs   ,0x8F0000 ,0x710000  
