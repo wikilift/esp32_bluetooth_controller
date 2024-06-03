@@ -1,27 +1,24 @@
-# Ignorar la carpeta build
+
 /build/
 
-/components/
+/components/arduino/
 
 /managed_components/
 
-# Ignorar la carpeta .devcontainer
 /.devcontainer/
 
-# Ignorar la carpeta .vscode
 /.vscode/
 
-# Ignorar archivos temporales de compilación y depuración
 *.log
 *.bin
 *.elf
 *.map
 
-# Ignorar archivos de configuración de IDF
+
 sdkconfig
 sdkconfig.old
 
-# Ignorar archivos de sistema y temporales
+*.py
 *.pyc
 *.pyo
 *.pyd
@@ -29,6 +26,6 @@ __pycache__/
 *.swp
 *.swo
 
-# Ignorar archivos relacionados con git
 *.lock
 *.pem
+*.sh
